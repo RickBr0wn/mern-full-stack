@@ -1,0 +1,19 @@
+{
+  "name": "mern_full_stack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon srver.js"
+  },
+  "author": "Rick Brown",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^3.6.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.6",
+    "nodemon": "^1.18.3"
+  }
+}
