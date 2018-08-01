@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 // Create the Schema
-const DataSchema = new Schema({
+const ItemSchema = new Schema({
   temp: {
     type: Number,
     required: true
@@ -13,4 +13,4 @@ const DataSchema = new Schema({
   }
 })
 
-module.exports = Data = mongoose.model('data', DataSchema)
+module.exports = Item = mongoose.model('item', ItemSchema)
