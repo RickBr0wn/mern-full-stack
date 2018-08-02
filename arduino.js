@@ -4,6 +4,8 @@ const express = require('express')
 const five = require('johnny-five')
 const fetch = require('node-fetch')
 
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+
 // Create the arduino board instance
 const board = new five.Board()
 
@@ -29,7 +31,7 @@ board.on('ready', () => {
   console.log('Arduino successfully connected')
 
   // Create a thermometer instance
-  let thermometer = new five.Thermometer({
+  const thermometer = new five.Thermometer({
     controller: "DS18B20",
     pin: 2
   })
