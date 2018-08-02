@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon srver.js"
+    "server": "nodemon server.js",
+    "arduino": "nodemon arduino.js"
   },
   "author": "Rick Brown",
   "license": "ISC",
@@ -13,7 +14,9 @@
     "body-parser": "^1.18.3",
     "concurrently": "^3.6.1",
     "express": "^4.16.3",
+    "johnny-five": "^0.15.0",
     "mongoose": "^5.2.6",
+    "node-fetch": "^2.2.0",
     "nodemon": "^1.18.3"
   }
 }
