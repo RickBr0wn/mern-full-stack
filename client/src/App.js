@@ -8,7 +8,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">iGrow</h1>
+          <h1 className="App-title">DS18b20 Temperature Data</h1>
         </header>
       </div>
     )
