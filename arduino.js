@@ -12,27 +12,35 @@ const app = new express()
 
 // POST data helper function
 const helper = data => {
-  fetch('http://localhost:5000/routes/api/', 
-    {
-      method: 'post',
-      body: JSON.stringify(data)
-    })
+  const obj = {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    method: 'POST',
+    body: JSON.stringify(data)
+  }
+  fetch('http://localhost:5000/api/items', obj)
     .then(res => res.json())
-    .catch(err => console.log('There has ben an error during POST: ', err))
+    .catch(err => console.log('There has been an error during POST: ', err))
 }
 
 // Arduino Board activation
 board.on('ready', () => {
-    console.log('Arduino successfully connected')
+  console.log('Arduino successfully connected')
 
   // Create a thermometer instance
   let thermometer = new five.Thermometer({
     controller: "DS18B20",
-    pin: 24
+    pin: 2
   })
 
   thermometer.on('change', function(){
-    console.log(this.celsius)
+    const temp = this.celsius
+    const obj = {
+      temp: temp
+    }
+    console.log(obj)   
+    helper(obj)
   })
 })
 
