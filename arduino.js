@@ -45,7 +45,7 @@ board.on('ready', () => {
 })
 
 // Set the port number
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 
-// Begin 'listening' on the pre defined port number (3000)
+// Begin 'listening' on the pre defined port number (3001)
 const server = http.createServer(app).listen(port, (req, res) => console.log('Listening on port: ' + port))
