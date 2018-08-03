@@ -15,11 +15,13 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "chart.js": "^2.7.2",
     "concurrently": "^3.6.1",
     "express": "^4.16.3",
     "johnny-five": "^0.15.0",
     "mongoose": "^5.2.6",
     "node-fetch": "^2.2.0",
-    "nodemon": "^1.18.3"
+    "nodemon": "^1.18.3",
+    "react-chartjs-2": "^2.7.4"
   }
 }
