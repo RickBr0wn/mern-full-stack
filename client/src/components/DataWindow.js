@@ -41,14 +41,14 @@ class DataWindow extends React.Component {
       const tempArray = []
       const timeArray = []
 
-      for(let i = (times.length - 150); i < times.length; i++) {
+      for(let i = (times.length - 100); i < times.length; i++) {
         tempArray.push(temps[i])
 
         const timeObj = new Date(times[i])
         let hours = timeObj.getHours()
         let minutes = timeObj.getMinutes()
         let seconds = timeObj.getSeconds()
-        const theTime = `${hours}:${minutes}:${seconds}`
+        const theTime = `${hours}:${minutes}`
         timeArray.push(theTime)
 
       }

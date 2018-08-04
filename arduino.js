@@ -39,7 +39,7 @@ board.on('ready', () => {
   thermometer.on('change', function(){
     const temp = this.celsius
     const obj = {
-      temp: temp
+      temp: temp.toFixed(1)
     }
     console.log(obj)   
     helper(obj)
