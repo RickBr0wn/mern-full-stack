@@ -4,6 +4,8 @@ const express = require('express')
 const five = require('johnny-five')
 const fetch = require('node-fetch')
 
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+
 // Create the arduino board instance
 const board = new five.Board()
 
@@ -29,7 +31,7 @@ board.on('ready', () => {
   console.log('Arduino successfully connected')
 
   // Create a thermometer instance
-  let thermometer = new five.Thermometer({
+  const thermometer = new five.Thermometer({
     controller: "DS18B20",
     pin: 2
   })
@@ -37,7 +39,7 @@ board.on('ready', () => {
   thermometer.on('change', function(){
     const temp = this.celsius
     const obj = {
-      temp: temp
+      temp: temp.toFixed(1)
     }
     console.log(obj)   
     helper(obj)
@@ -45,7 +47,7 @@ board.on('ready', () => {
 })
 
 // Set the port number
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 
-// Begin 'listening' on the pre defined port number (3000)
+// Begin 'listening' on the pre defined port number (3001)
 const server = http.createServer(app).listen(port, (req, res) => console.log('Listening on port: ' + port))
