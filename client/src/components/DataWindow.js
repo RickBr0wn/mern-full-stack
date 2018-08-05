@@ -12,6 +12,8 @@ class DataWindow extends React.Component {
     }
   }
 
+  minTwoDigits = number => (number < 10 ? "0" : "") + number
+
   fetchAPI = () => {
     fetch('/api/items', { mode: 'no-cors' })
       .then(result => result.json())
@@ -31,6 +33,7 @@ class DataWindow extends React.Component {
   componentDidMount() {
     this.fetchAPI()
   }
+
   
   render(){
     if(this.state.isLoaded) {
@@ -40,35 +43,52 @@ class DataWindow extends React.Component {
       const ids = data.map(item => item._id)
       const tempArray = []
       const timeArray = []
+      const requiredArray = []
 
-      for(let i = (times.length - 100); i < times.length; i++) {
+      for(let i = 0; i < 60; i++) {
         tempArray.push(temps[i])
 
         const timeObj = new Date(times[i])
         let hours = timeObj.getHours()
         let minutes = timeObj.getMinutes()
         let seconds = timeObj.getSeconds()
-        const theTime = `${hours}:${minutes}`
+        const theTime = `${hours}:${this.minTwoDigits(minutes)}`
         timeArray.push(theTime)
-
+        requiredArray.push(24.00)
       }
 
       const dataObj = {
-        labels: timeArray,
+        labels: timeArray.reverse(),
         datasets: [{
-        label: "Temperature",
-        borderColor: 'rgb(255, 99, 132)',
-        data: tempArray,
+          label: "Actual Temperature",
+          borderColor: 'rgb(255, 99, 132)',
+          data: tempArray.reverse()
+        },{
+          label: "Required Temperature",
+          borderColor: 'rgb(12, 56, 132)',
+          data: requiredArray
         }]
       }
 
+      const options = {
+        maintainAspectRatio: false, 
+        elements: { point: { radius: 2 } },
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true,
+              min: 20,
+              max: 30
+            }
+          }]
+        }
+      }
+
       return (
-        <div>
-          <h1>Data Window</h1>
+        <div className="last-1-hour-graph">
+          <h1>Last 1 Hour</h1>
           <Line data={dataObj}
-                options={{maintainAspectRatio: false}}
-                height={300}
-                width={800} />
+                options={options} />
         </div>
       )
     }else{

@@ -26,6 +26,8 @@ const helper = data => {
     .catch(err => console.log('There has been an error during POST: ', err))
 }
 
+const timer = 1000*60
+
 // Arduino Board activation
 board.on('ready', () => {
   console.log('Arduino successfully connected')
@@ -33,10 +35,11 @@ board.on('ready', () => {
   // Create a thermometer instance
   const thermometer = new five.Thermometer({
     controller: "DS18B20",
-    pin: 2
+    pin: 2,
+    freq: timer
   })
 
-  thermometer.on('change', function(){
+  thermometer.on('data', function(){
     const temp = this.celsius
     const obj = {
       temp: temp.toFixed(1)

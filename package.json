@@ -8,7 +8,7 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "arduino": "nodemon arduino.js",
-    "client": "npm start --prefix client",
+    "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \" npm run client\" \" npm run arduino\""
   },
   "author": "Rick Brown",
