@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Line } from 'react-chartjs-2'
 
-class DataWindow extends React.Component {
+class Last1Hour extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -99,4 +99,4 @@ class DataWindow extends React.Component {
   }
 }
 
-export default DataWindow
+export default Last1Hour

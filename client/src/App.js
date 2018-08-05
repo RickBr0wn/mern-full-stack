@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import DataWindow from './components/DataWindow'
+import Last1Hour from './components/Last1Hour'
 import Header from './components/Header'
 import SideBar from './components/SideBar'
 import Dial1 from './components/Dials/1'
@@ -16,7 +16,7 @@ class App extends Component {
         <Dial1 />
         <Dial2 />
         <Dial3 />
-        <DataWindow />
+        <Last1Hour />
       </div>
     )
   }
