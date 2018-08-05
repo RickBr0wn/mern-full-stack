@@ -1,5 +1,14 @@
 .App {
   text-align: center;
+  display: grid;
+  
+  grid-template-areas:
+    "header header header header"
+    "sidebar dial1 dial2 dial3"
+    "sidebar last1 last1 last1";
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 5rem 1fr 1fr;
 }
 
 .App-logo {
@@ -8,6 +17,8 @@
 }
 
 .App-header {
+  grid-area: "header";
+
   background-color: #222;
   color: white;
 }

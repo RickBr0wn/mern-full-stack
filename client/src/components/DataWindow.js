@@ -85,7 +85,7 @@ class DataWindow extends React.Component {
       }
 
       return (
-        <div className="last-1-hour-graph">
+        <div className="last-1">
           <h1>Last 1 Hour</h1>
           <Line data={dataObj}
                 options={options} />

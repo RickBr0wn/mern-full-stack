@@ -12,6 +12,55 @@ body {
   box-sizing: border-box;
 }
 
-.last-1-hour-graph {
+.main-container {
+  text-align: center;
+  display: grid;
 
+  grid-template-columns: 16% repeat(3, 1fr);
+  grid-auto-rows: auto auto auto;
+}
+
+.header {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  background-color: #222;
+}
+
+.side-bar {
+  padding: 3rem;
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+  background-color: #8ca0ff;
+}
+
+.dial-1 {
+  padding: 3rem;
+  background-color: #ffa08c;
+}
+
+.dial-2 {
+  padding: 3rem;
+  background-color: #ffff64;
+}
+
+.dial-3 {
+  padding: 3rem;
+  background-color: #8cffa0;
+}
+
+.last-1 {
+  grid-column: 2 / -1;
+
+  padding: 4rem;
+}
+
+.logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 4rem;
+}
+
+/* Animations */
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
