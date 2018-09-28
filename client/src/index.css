@@ -17,25 +17,22 @@ body {
   display: grid;
 
   grid-template-columns: 16% repeat(3, 1fr);
-  grid-auto-rows: auto auto auto;
-}
-
-.header {
-  grid-column: 1 / -1;
-  grid-row: 1 / 2;
-  background-color: #222;
-}
-
-header h1 {
-  color: #fff;
 }
 
 .side-bar {
   padding: 3rem;
   grid-column: 1 / 2;
-  grid-row: 2 / 6;
+  grid-row: 1 / 6;
   background: linear-gradient(to right, rgb(127, 213, 112, 0.8), rgb(40, 180, 133, 0.8)), url('https://expertjoints.com/wp-content/uploads/news/69275.jpg') no-repeat;
   background-size: cover;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 300;
+  text-shadow: 2px 2px rgba(0,0,0,0.5);
+}
+
+.menu-title {
+  margin-top: 10vh;
 }
 
 .dial-1 {
@@ -64,6 +61,21 @@ header h1 {
 .logo {
   animation: App-logo-spin infinite 20s linear;
   height: 4rem;
+}
+
+.menu-items {
+  font-size: 1.4rem;
+  font-weight: 100;
+  line-height: 2;
+  margin-top: 5vh;
+  margin-bottom: 1rem;
+  
+}
+
+.menu-item:hover {
+  width: 100%;
+  background-color: rgb(127, 213, 112, 0.4);
+  font-weight: 300;
 }
 
 /* Animations */

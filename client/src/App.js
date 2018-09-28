@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import Last1Hour from './components/Last1Hour'
 import Last24Hours from './components/Last24Hours'
 import LastWeek from './components/LastWeek'
-import Header from './components/Header'
 import SideBar from './components/SideBar'
 import Dial1 from './components/Dials/1'
 import Dial2 from './components/Dials/2'
@@ -13,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="main-container">
-        <Header />
+        
         <SideBar />
         <Dial1 />
         <Dial2 />

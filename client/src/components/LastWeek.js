@@ -44,16 +44,18 @@ class LastWeek extends React.Component {
       const tempArray = []
       const timeArray = []
       const requiredArray = []
+      const daysArray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
-      for(let i = 0; i < (60 * 24); i += 60) {
+      for(let i = 0; i < (60 * 24 * 7); i += (60 * 24)) {
         tempArray.push(temps[i])
 
         const timeObj = new Date(times[i])
+        let days = timeObj.getDay()
         let hours = timeObj.getHours()
         let minutes = timeObj.getMinutes()
         let seconds = timeObj.getSeconds()
         const theTime = `${hours}:${this.minTwoDigits(minutes)}`
-        timeArray.push(theTime)
+        timeArray.push(daysArray[days])
         requiredArray.push(24.00)
       }
 
@@ -64,8 +66,8 @@ class LastWeek extends React.Component {
           borderColor: 'rgb(255, 99, 132)',
           data: tempArray.reverse()
         },{
-          label: "Required Temperature",
-          borderColor: 'rgb(12, 56, 132)',
+          label: "Optimum Temperature",
+          borderColor: 'rgba(12, 56, 132, 0.2)',
           data: requiredArray
         }]
       }

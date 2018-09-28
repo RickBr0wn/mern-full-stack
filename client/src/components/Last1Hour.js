@@ -64,8 +64,8 @@ class Last1Hour extends React.Component {
           borderColor: 'rgb(255, 99, 132)',
           data: tempArray.reverse()
         },{
-          label: "Required Temperature",
-          borderColor: 'rgb(12, 56, 132)',
+          label: "Optimum Temperature",
+          borderColor: 'rgba(12, 56, 132, 0.2)',
           data: requiredArray
         }]
       }
@@ -77,8 +77,8 @@ class Last1Hour extends React.Component {
           yAxes: [{
             ticks: {
               beginAtZero: true,
-              min: 10,
-              max: 40
+              min: 20,
+              max: 30
             }
           }]
         }
