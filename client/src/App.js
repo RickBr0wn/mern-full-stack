@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
 import Last1Hour from './components/Last1Hour'
+import Last24Hours from './components/Last24Hours'
+import LastWeek from './components/LastWeek'
 import Header from './components/Header'
 import SideBar from './components/SideBar'
 import Dial1 from './components/Dials/1'
@@ -17,6 +19,8 @@ class App extends Component {
         <Dial2 />
         <Dial3 />
         <Last1Hour />
+        <Last24Hours />
+        <LastWeek />
       </div>
     )
   }

@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Line } from 'react-chartjs-2'
 
-class Last1Hour extends React.Component {
+class LastWeek extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -45,7 +45,7 @@ class Last1Hour extends React.Component {
       const timeArray = []
       const requiredArray = []
 
-      for(let i = 0; i < 60; i++) {
+      for(let i = 0; i < (60 * 24); i += 60) {
         tempArray.push(temps[i])
 
         const timeObj = new Date(times[i])
@@ -86,7 +86,7 @@ class Last1Hour extends React.Component {
 
       return (
         <div className="last-1">
-          <h1>Last 1 Hour</h1>
+          <h1>Last Week</h1>
           <Line data={dataObj}
                 options={options} />
         </div>
@@ -99,4 +99,4 @@ class Last1Hour extends React.Component {
   }
 }
 
-export default Last1Hour
+export default LastWeek
