@@ -9,7 +9,8 @@
     "server": "nodemon server.js",
     "arduino": "nodemon arduino.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \" npm run client\" \" npm run arduino\""
+    "dev": "concurrently \"npm run server\" \" npm run client\" \" npm run arduino\"",
+    "server-development": "concurrently \"npm run server\" \" npm run arduino\""
   },
   "author": "Rick Brown",
   "license": "ISC",
