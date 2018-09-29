@@ -1,10 +1,21 @@
 import React from 'react'
-import Knob from 'react-canvas-knob';
+import Gauge from 'react-svg-gauge'
 
-const Dial1 = () => (
-  <div className="dial-1">
-    <h1>Dial1</h1>
-  </div>
-)
+class Dial1 extends React.Component{
+  state = {
+    value: 21
+  }
+
+  render() {
+    return (
+      <div className="dial-containers">
+        <Gauge value={this.state.value} width={200} height={160} label="Temp Low Today" />
+        <div className="dial-containers">
+          <Gauge value={this.state.value} width={200} height={160} label="Temp High Today" />
+        </div>
+      </div>
+    )
+  }
+} 
 
 export default Dial1
