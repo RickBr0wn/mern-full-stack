@@ -9,9 +9,12 @@
     "server": "nodemon server.js",
     "arduino": "nodemon arduino.js",
     "client": "npm run start --prefix client",
+    "sandbox": "npm run start --prefix sandbox-client",
     "dev": "concurrently \"npm run server\" \" npm run client\" \" npm run arduino\"",
-    "server-development": "concurrently \"npm run server\" \" npm run arduino\"",
-    "client-development": "concurrently \"npm run server\" \" npm run client\""
+    "server-dev": "concurrently \"npm run server\" \" npm run arduino\"",
+    "client-dev": "concurrently \"npm run server\" \" npm run client\"",
+    "sandbox-dev": "concurrently \"npm run server\" \" npm run sandbox\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix"
   },
   "author": "Rick Brown",
   "license": "ISC",
