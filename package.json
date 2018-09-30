@@ -14,7 +14,7 @@
     "server-dev": "concurrently \"npm run server\" \" npm run arduino\"",
     "client-dev": "concurrently \"npm run server\" \" npm run client\"",
     "sandbox-dev": "concurrently \"npm run server\" \" npm run sandbox\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Rick Brown",
   "license": "ISC",
