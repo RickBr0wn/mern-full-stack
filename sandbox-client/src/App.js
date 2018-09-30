@@ -1,18 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './Components/Header'
+import Content from './Components/Content'
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      isLoaded: false,
+      data: [],
+      error: null
+    }
+  }
+
+  fetchAPI = () => {
+    fetch('/api/items', { mode: 'no-cors' })
+      .then(result => result.json())
+      .then(response => 
+        this.setState({
+          isLoaded: true,
+          data: response
+        }),
+      error => 
+        this.setState({
+          isLoaded: true,
+          error
+        })
+    )
+  }
+
+  componentDidMount() {
+    this.fetchAPI()
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Header />
+        {
+          this.state.isLoaded ? <Content dataProp={this.state} /> : <h1>Loading API Data..</h1>
+        }
       </div>
     );
   }
